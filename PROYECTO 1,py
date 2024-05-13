@@ -1,0 +1,66 @@
+import turtle
+
+# Inicio del programa
+
+# Paso 1: Solicitar y almacenar datos del niño
+print("Bienvenido al programa de cuentos infantiles.")
+nombre = input("Por favor, ingresa tu nombre: ")
+edad = input("¿Cuántos años tienes? ")
+print("Selecciona tu color favorito:")
+print("1. Rojo")
+print("2. Azul")
+print("3. Verde")
+print("4. Amarillo")
+print("5. Rosa")
+opcion = input("Ingresa el número correspondiente a tu color favorito: ")
+
+if opcion == "1":
+    color_favorito = "Rojo"
+elif opcion == "2":
+    color_favorito = "Azul"
+elif opcion == "3":
+    color_favorito = "Verde"
+elif opcion == "4":
+    color_favorito = "Amarillo"
+elif opcion == "5":
+    color_favorito = "Rosa"
+else:
+    color_favorito = "Rojo"  # Por defecto, retornar rojo si la opción no es válida
+
+# Paso 2: Definir las secuencias del cuento
+secuencias = [
+    "El lejano oeste",
+    "El alienígena del lejano oeste",
+    "La creación va a empezar",
+    "El desafío del prototipo de fútbol",
+    "Regreso a las canchas"
+]
+
+# Paso 3: Mostrar cada secuencia secuencialmente
+indice = 0
+while indice < len(secuencias):
+    secuencia = secuencias[indice]
+    print("-------------------------------------------------")
+    print(secuencia)
+    print("-------------------------------------------------")
+    print(f"Una vez en el lejano oeste, donde había un hombre que le gustaba mucho el fútbol, quería crear el mejor alienígena para jugar al fútbol este se llamaba {nombre}, un niño de {edad} años a quien le encantaba el color {color_favorito}.")
+    print("Dibujando el panel... (utilizando Turtle)")
+    
+    # Configurar Turtle
+    ventana = turtle.Screen()
+    ventana.title("Panel")
+    t = turtle.Turtle()
+    
+    # Dibujar figuras geométricas
+    t.speed(1)
+    t.color(color_favorito)
+    t.begin_fill()
+    t.circle(50)  # Ejemplo de figura geométrica
+    t.end_fill()
+    
+    # Mantener la ventana abierta hasta que se cierre manualmente
+    turtle.done()
+    
+    indice += 1
+
+# Fin del programa
